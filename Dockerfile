@@ -7,3 +7,5 @@ COPY . /usr/src/app
 EXPOSE 8000
 EXPOSE 3306
 CMD ["npm", "start"]
+CMD ["npm", "start"]
+
