@@ -12,3 +12,5 @@ router.get('/addData',cors(), empController.addData)
 router.delete('/',cors(), empController.deleteOne)
 
 module.exports= router
+router.get('/addData',cors(), emp.addData)
+router.get('/addData',cors(), empController.Data)
