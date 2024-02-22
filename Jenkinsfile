@@ -4,8 +4,8 @@ pipeline {
     environment {
         DOCKER_REGISTRY = "gcr.io"  // Your GCR registry URL
         IMAGE_NAME = "frontend" // Your Docker image name
-        image2 = "backend"
-        image3 = "mysql"
+        //image2 = "backend"
+        //image3 = "mysql"
         TAG = "latest"  // Tag for your Docker image
         GCP_PROJECT_ID = "jagriti-411012"  // Your GCP project ID
         GCP_SERVICE_ACCOUNT_KEY = credentials('GCP_ID')  // Jenkins credentials for GCP service account key file
@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: '1', url: 'https://github.com/JagritiDubey123/Jenkins.git'
+                git branch: 'main', credentialsId: '1', url: 'https://github.com/JagritiDubey123/docker-project-123.git'
             }
         }
         // stage('Cleanup Workspace') {
@@ -28,7 +28,7 @@ pipeline {
                     // Build Docker image
                     sh "docker build -f FrontEnd/Dockerfile ."
                     sh "docker build -f backend/Dockerfile ."
-                    sh "docker build -f mysql/Dockerfile ."
+                   // sh "docker build -f mysql/Dockerfile ."
                 }
             }
         }
@@ -43,13 +43,13 @@ pipeline {
 
                     // Tag Docker image with GCR URL
                     sh "docker tag ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${IMAGE_NAME}:${TAG} ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${IMAGE_NAME}:${TAG}"
-                     sh "docker tag ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image3}:${TAG} ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image2}:${TAG}"
-                     sh "docker tag ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image2}:${TAG} ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image3}:${TAG}"
+                     //sh "docker tag ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image3}:${TAG} ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image2}:${TAG}"
+                    // sh "docker tag ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image2}:${TAG} ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image3}:${TAG}"
 
                     // Push Docker image to GCR
                     sh "docker push ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${IMAGE_NAME}:${TAG}"
-                     sh "docker push ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image2}:${TAG}"
-                     sh "docker push ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image3}:${TAG}"
+                    // sh "docker push ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image2}:${TAG}"
+                   //  sh "docker push ${DOCKER_REGISTRY}/${GCP_PROJECT_ID}/${image3}:${TAG}"
                 }
             }
         }
