@@ -1,10 +1,11 @@
 def call(){
   sh 'echo Hi Team, How are you!!!'
   sh "date"
+  sh "echo hello "
 }
-def greet(name) {
-    sh "echo Hello, $name!"
-}
+// def greet(name) {
+//     sh "echo Hello, $name!"
+// }
 // Define variables and data types
 // def name = "John"
 // def age = 30
