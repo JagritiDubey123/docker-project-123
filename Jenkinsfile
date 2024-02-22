@@ -16,13 +16,14 @@ pipeline {
                  myShared()
             }
         }
-    }
-    stages {
+    
+   
         stage('Checkout') {
             steps {
                 git branch: 'main', credentialsId: '1', url: 'https://github.com/JagritiDubey123/docker-project-123.git'
             }
         }
+    
         // stage('Cleanup Workspace') {
         //     steps {
         //         deleteDir()
