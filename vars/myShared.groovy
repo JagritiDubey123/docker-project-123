@@ -3,7 +3,7 @@ def call(){
   sh "date"
 }
 def greet(name) {
-    println "Hello, $name!"
+    sh "echo Hello, $name!"
 }
 // Define variables and data types
 // def name = "John"
