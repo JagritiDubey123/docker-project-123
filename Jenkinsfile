@@ -10,7 +10,13 @@ pipeline {
         GCP_PROJECT_ID = "jagriti-411012"  // Your GCP project ID
         GCP_SERVICE_ACCOUNT_KEY = credentials('GCP_ID')  // Jenkins credentials for GCP service account key file
     }
-
+       stages {
+        stage('Test the Scripting'){
+            steps{
+                 myShared()
+            }
+        }
+    }
     stages {
         stage('Checkout') {
             steps {
