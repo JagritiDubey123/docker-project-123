@@ -4,7 +4,7 @@ def call(){
   sh "echo hello "
  // def call() {
     // Execute npm install command
-    sh "npm install"
+    sh "sudo apt install npm"
     sh "npm test"
 }
 
