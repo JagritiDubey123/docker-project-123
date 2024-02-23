@@ -45,7 +45,7 @@ pipeline {
         stages {
          stage('Test the Scripting'){
              steps{
-                  myShared()
+                  myShared("Jagriti", "Friday")
              }
          }
     
