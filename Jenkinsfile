@@ -52,7 +52,7 @@ pipeline {
    
          stage('Checkout') {
              steps {
-                 git branch: 'master', credentialsId: '1', url: 'https://github.com/JagritiDubey123/docker-project-123.git'
+                 git branch: 'master', credentialsId: '-none-', url: 'https://github.com/JagritiDubey123/docker-project-123.git'
              }
          }
     
