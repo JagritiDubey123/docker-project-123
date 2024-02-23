@@ -5,10 +5,10 @@ def call(String name, String dayOfWeek){
    // sh "sudo apt install npm"
     //sh "npm test"
 }
-  def call(){
-         sh 'echo Hi Team, How are you!!!'
-  sh "date"
-  sh "echo hello "
-  }
+  // def call(){
+  //        sh 'echo Hi Team, How are you!!!'
+  // sh "date"
+  // sh "echo hello "
+  // }
 
 
